@@ -1,0 +1,28 @@
+<script>
+  // register an element
+  MyElement = Polymer({
+
+    is: 'reg-my-element',
+
+    // See below for lifecycle callbacks
+    created: function() {
+      this.textContent = 'My element!';
+    },
+
+    factoryImpl: function(foo, bar) {
+      this.foo = foo;
+      this.configurationWithBar(bar);
+    },
+
+    configurationWithBar: function(bar) {
+      console.log('config');
+    }
+
+  });
+
+  // create an instance with createElement:
+  //var el1 = document.createElement('my-element');
+
+  // ... or with the constructor:
+  //var el2 = new MyElement(42, 'octopus');
+</script>
